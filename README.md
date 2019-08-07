@@ -4,7 +4,8 @@
 + Describe the importance of error messages in computer programs
 + Identify the different types of error messages
 + Use an error message to debug an application 
-+ Use the rubber ducking technique to debug an application 
++ Use the rubber ducking technique to debug an application
++ Explain why error messages are a good thing, rather than a bad thing, when developing applications
 
 ## Outline
 
