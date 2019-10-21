@@ -17,6 +17,7 @@
 + As a computer user, you're probably used to an error message being bad news - this means that maybe you did something wrong or something you tried didn't work.
 + But as a programmer, error messages are a really good thing. Pretty much any program that you write is going to have errors. And this is really important - if your program didn't have any errors, that means you'd literally have nothing to program, you'd have no work to do.
 + Today we'll look at three different types of error messages you're likely to see, as well as what to do when you encounter those. Most of the errors that you'll see will fall into one of these three buckets.
++ Those three types are: Syntax Errors, Runtime Errors, and Logical Errors
 + The first type is a syntax error
   + This happens if you write some code that the interpreter can't compile. This usually happens because of a typo, or sometimes some confusion about how something should work.
   + For example, in Ruby, when I write the word `if`, it's required that I also write `end`
