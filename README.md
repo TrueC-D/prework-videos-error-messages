@@ -22,16 +22,16 @@
 + Those three types are: Syntax Errors, Runtime Errors, and Logical Errors
 + The first type is a syntax error
   + This happens if you write some code that the interpreter can't compile. This usually happens because of a typo, or sometimes some confusion about how something should work.
-  + For example, in Ruby, when I write the word `if`, it's required that I also write `end
-  + Here in the Learn IDE sandbox, I have a file called `app.rb` with the word `if`
+  + For example, in Ruby, when I write the word `if`, it's required that I also write `end`.
+  + Here in the Learn IDE sandbox, I have a file called `app.rb` with the word `if`.
   + If I run this program now, we'll see `syntax error: unexpected end of input, expecting keyword end`
-  + As I mentioned before, if you're not used to seeing error messages, this might look scary, but this is actually awesome. The computer is doing it's best job to describe what the problem is, and it's telling you what line number it's found the problem at. See the line number there on the side?
+  + As I mentioned before, if you're not used to seeing error messages, this might look scary, but this is actually awesome. The computer is doing it's best job to describe what the problem is, and it's telling you what line number it found the problem at.
   + Likewise, if I write `"Barbara" = name` -> we see a great error message: `app.rb:1: syntax error, unexpected '=', expecting end-of-input
 "Barbara" = name`
   + So the best way to debug this type of error message is to go to the line number, and read that line, and try to reason about what the problem might be. Describe out loud what it is that line is trying to do. In my case, I would say "I'm trying to make a variable called name and assign it a value of 'Barbara'"
   + Now, if I read this line, I will hopefully realize that I have this backwards - oops, I need to write `name = "Barbara"` to make this work. So now, I can make that change, run again, and now no news is good news.
   + This is sometimes called "Rubber Duck Debugging" - some programmers literally keep a rubber duck on their desk, and when they're stuck, they explain what they're trying to do to the rubber duck line by line. By walking through the code and checking all of your assumptions, you can actually find more bugs and figure out what's going wrong in your application.
-  + One other tip to help avoid syntax errors: When you write a word that needs to be closed by end (if, do, def, etc) write `end` immediately, then fill in the middle. That way, you'll always have the closing ready to go and you don't have to go back and find it.
+  + One other tip to help avoid syntax errors: When you write a word that needs to be closed by `end` (`if`, `do`, `def`, etc) write `end` immediately, then fill in the middle. That way, you'll always have the closing ready to go and you don't have to go back and find it.
 + The next type of error we might see is a Runtime Error.
   + Once the interpreter makes sure that the syntax looks correct, it tries to run the program. Sometimes here, it runs into something that it can't do.
   + When that happens, the interpreter raises an error. There are a bunch of different types of these.
@@ -50,7 +50,7 @@
     + This throws an error: `app.rb:5:in <main>': undefined method upcase for nil:NilClass (NoMethodError)` So, to fix this, we don't want to define the upcase method - the problem here is that `name` is nil, and we can't call `upcase` on our nil value. So we need to figure out how to avoid that nil.
     + Another really common error type is an Argument error - this happens when you give a method either too many or too few arguments. This is a really nice one to debug, because it will tell you pretty much exactly what the problem is.
     + Take the reverse method for a string - it doesn't take any arguments. `"Hello".reverse` returns the reversed string. If I pass an argument to that method - it's not going to be pleased. The good news - it points me write to the line number and says how many arguments it was expecting, and how many I gave it. `app.rb:1:in reverse': wrong number of arguments (given 1, expected 0) (Argument` - in this case, I gave 1 argument, but the method wanted zero.
-  + If this is a method that you haven't defined, like the reverse method, you need to change how you're calling the method. If you did define this method yourself, then you can update your method definition if needed. A lot of times, when working through a lab on Learn, you'll see this error from the test suite, and that means that the test wants you to add additional argument options to your method definition.
+    + If this is a method that you haven't defined, like the reverse method, you need to change how you're calling the method. If you did define this method yourself, then you can update your method definition if needed. A lot of times, when working through a lab on Learn, you'll see this error from the test suite, and that means that the test wants you to add additional argument options to your method definition.
 + Our last big bucket of errors are logical errors - this is when you were expecting something to happen that didn't happen. So this is really a bug in your program - I ran it, I thought it would do something, but it didn't do the thing.
   + These are by far the hardest to debug - because you get no information.
   + Say I want to write a program that prints out a name.
